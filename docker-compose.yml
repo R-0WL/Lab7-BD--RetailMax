@@ -9,8 +9,9 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./sql:/docker-entrypoint-initdb.d
-      - ./data:/tmp/data
+      - ./data/DDL.sql:/docker-entrypoint-initdb.d/01_schema.sql
+      - ./data/DATA.sql:/docker-entrypoint-initdb.d/02_load.sql
+      - ./postgres-data:/var/lib/postgresql/data
     networks:
       - retailmaxlab7-network
 

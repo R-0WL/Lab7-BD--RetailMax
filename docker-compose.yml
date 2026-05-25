@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: retailmax-postgres
+    environment:
+      POSTGRES_USER: retailmax
+      POSTGRES_PASSWORD: retailmax123
+      POSTGRES_DB: retailmax
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+      - ./data:/tmp/data
+    networks:
+      - retailmaxlab7-network
+
+  metabase:
+    image: metabase/metabase:latest
+    container_name: retailmax-metabase
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./metabase-data:/metabase-data
+    depends_on:
+      postgres:
+        condition: service_started
+    networks:
+      - retailmaxlab7-network
+
+networks:
+  retailmaxlab7-network:
+    driver: bridge

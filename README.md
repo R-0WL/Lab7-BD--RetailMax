@@ -43,6 +43,22 @@ Se puede tardar hasta 2 minutos la migración inicial de metabase así que esper
 - Email: `calificar@uvg.edu.gt`
 - Contraseña: `secret123+`
 
+### 4. Configurar conexión a la base de datos en Metabase
+- Tipo de base de datos: PostgreSQL
+- Host: `postgres`
+- BD: `retailmax`
+- BD Usuario: `retailmax`
+- BD Contraseña: `retailmax123`
+
+#### Revisión de conexión
+Si la conexión es exitosa, ya podrás explorar la base de datos y crear tus dashboards.
+Si tienes problemas con la conexión desde metabase, prueba lo siguiente:
+- revisa si se cargaron los datos de forma correcta con:
+`docker exec -it retailmax-postgres psql -U retailmax -d retailmax` y \dt para listar las tablas.
+- si el contenedor de PostgreSQL no está corriendo, puedes reiniciarlo con `docker compose restart postgres` o usar `docker compose down -v` para eliminar los volúmenes y reiniciar el ambiente.
+- Verificar que el contenedor de PostgreSQL esté corriendo correctamente con `docker ps`.
+- Revisar los logs del contenedor de PostgreSQL con `docker logs retailmax` para identificar posibles errores de conexión o inicialización.
+- 
 ---
 
 ## Estructura del Proyecto

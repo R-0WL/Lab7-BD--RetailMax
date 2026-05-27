@@ -113,6 +113,7 @@ Si tienes problemas con la conexión desde metabase, prueba lo siguiente:
 ## Aréa de enfoque de las consultas SQL
 
 ### Marketing
+**URL:**[Video explicatorio](https://vimeo.com/1195858404?share=copy&fl=sv&fe=ci)
 
 
 

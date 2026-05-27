@@ -33,7 +33,7 @@ A continuación, se documentan los 25 indicadores solicitados para este tablero:
 * 4. Visualización y por qué: Gráfico de dona (Donut chart), muestra la proporción de cada segmento respecto al total.
 * 5. Consulta SQL:
 
-SELECT segmento, count(id) AS total_clientes FROM clientes GROUP BY 1;
+
 
 ## 5. Porcentaje de clientes VIP
 
